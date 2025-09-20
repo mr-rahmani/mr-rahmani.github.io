@@ -1,8 +1,8 @@
 title: "Mohammad Reza Rahmani"
 tagline: "Information Theory • High-dimensional Statistics • Quantum"
 author: "M. R. Rahmani"
-email: you@example.com
-url: "https://username.github.io"
+email: mr.rahmani.75@gmail.com
+url: "https://mr-rahmani.github.io"
 theme: minima
 # اگر خواستی پوسته‌ی دیگر:
 # remote_theme: pages-themes/cayman@v0.2.0
@@ -13,5 +13,5 @@ plugins:
 # ناوبری ساده
 minima:
   social_links:
-    - { platform: github,  user_url: "https://github.com/username" }
-    - { platform: google_scholar, user_url: "https://scholar.google.com/..." }
+    - { platform: github,  user_url: "https://github.com/mr-rahmani" }
+    - { platform: google_scholar, user_url: "https://scholar.google.com/citations?hl=en&user=ZMe6Gx8AAAAJ" }
