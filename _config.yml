@@ -10,8 +10,30 @@ plugins:
   - jekyll-feed
   - jekyll-seo-tag
   - google_analytics
+  - jekyll-scholar
 # ناوبری ساده
 minima:
   social_links:
     - { platform: github,  user_url: "https://github.com/mr-rahmani" }
     - { platform: google_scholar, user_url: "https://scholar.google.com/citations?hl=en&user=ZMe6Gx8AAAAJ" }
+
+scholar:
+  style: ieee
+  locale: en
+  source: _bibliography
+  bibliography: references.bib
+  bibliography_template: bib
+  sort_by: year, month
+  order: descending,descending
+  details_layout: bib_details
+  repository: /assets/papers
+
+markdown: kramdown
+kramdown:
+  input: GFM
+
+exclude:
+  - README.md
+  - vendor
+  - node_modules
+  - .github
