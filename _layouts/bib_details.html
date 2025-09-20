@@ -1,0 +1,12 @@
+---
+layout: default
+---
+<article class="wrap">
+  <h1>{{ page.entry.title }}</h1>
+  <p><strong>Authors:</strong> {{ page.entry.author }}</p>
+  {% if page.entry.venue %}<p><strong>Venue:</strong> {{ page.entry.venue }}</p>{% endif %}
+  <p><strong>Year:</strong> {{ page.entry.year }}</p>
+  <p>{{ reference }}</p>
+  {% if links.pdf %}<p><a href="{{ links.pdf }}">PDF</a></p>{% endif %}
+  {% if page.entry.url %}<p><a href="{{ page.entry.url }}">Link</a></p>{% endif %}
+</article>
