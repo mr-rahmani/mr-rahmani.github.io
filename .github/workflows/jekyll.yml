@@ -1,5 +1,4 @@
-# .github/workflows/jekyll.yml
-name: Build and Deploy Jekyll (with plugins)
+name: Build & Deploy Jekyll (custom plugins)
 
 on:
   push:
@@ -25,17 +24,21 @@ jobs:
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '3.1.3'
+          ruby-version: '3.1.3'     # یا حذف و استفاده از .ruby-version
           bundler-cache: true
 
-      - name: Build with Jekyll
-        uses: actions/jekyll-build-pages@v1  # اکشن رسمی بیلد جکیل
-        with:
-          source: ./
-          destination: ./_site
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5   # متادیتا و آماده‌سازی Pages
+        # اگر نیازی به config ویژه نداری، همین کافی‌ست
+
+      - name: Install deps
+        run: bundle install --path vendor/bundle
+
+      - name: Build Jekyll (custom env, Jekyll 4 + plugins)
+        run: bundle exec jekyll build --trace --destination ./_site
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v4
         with:
           path: ./_site
 
