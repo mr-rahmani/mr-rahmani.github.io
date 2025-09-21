@@ -15,6 +15,10 @@ minima:
   social_links:
     - { platform: github,  user_url: "https://github.com/mr-rahmani" }
     - { platform: google_scholar, user_url: "https://scholar.google.com/citations?hl=en&user=ZMe6Gx8AAAAJ" }
+  nav_pages:
+    - index.md
+    - about.md
+    - publications.md
 
 scholar:
   style: ieee
