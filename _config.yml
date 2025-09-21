@@ -15,21 +15,32 @@ minima:
   social_links:
     - { platform: github,  user_url: "https://github.com/mr-rahmani" }
     - { platform: google_scholar, user_url: "https://scholar.google.com/citations?hl=en&user=ZMe6Gx8AAAAJ" }
-  nav_pages:
-    - index.md
-    - about.md
-    - publications.md
+
+header_pages:
+  - index.md
+  - about.md
+  - publications.md
 
 scholar:
-  style: ieee
+  style: apa
   locale: en
   source: _bibliography
   bibliography: references.bib
-  bibliography_template: bib
+
+  # مرتب‌سازی و گروه‌بندی
   sort_by: year, month
   order: descending,descending
-  details_layout: bib_details
+  group_by: year
+  group_order: descending
+
+  # لینک خودکار به PDF بر اساس کلید BibTeX
+  # (اگر فایل pdf را با همان کلید داخل این پوشه بگذاری)
   repository: /assets/papers
+
+  # تمپلیت رندر هر مدخل و صفحهٔ جزئیات
+  bibliography_template: bib
+  # details_layout: bib_details
+  details_link: Details
 
 markdown: kramdown
 kramdown:

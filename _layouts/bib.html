@@ -1,0 +1,23 @@
+---
+---
+<div class="pub-item">
+  <div class="pub-citation">
+    {{ reference }}  <!-- فرمت‌دهی کامل طبق style: ieee -->
+  </div>
+
+  <div class="pub-links">
+    {% if entry.doi %}
+      <a class="btn btn-ghost" href="https://doi.org/{{ entry.doi }}" target="_blank" rel="noopener">DOI</a>
+    {% endif %}
+
+    {% if entry.eprint and entry.archivePrefix == "arXiv" %}
+      <a class="btn btn-ghost" href="https://arxiv.org/abs/{{ entry.eprint }}" target="_blank" rel="noopener">arXiv</a>
+    {% endif %}
+
+    {% if links.pdf %}
+      <a class="btn btn-solid" href="{{ links.pdf }}" target="_blank" rel="noopener">PDF</a>
+    {% endif %}
+
+    {% cite_details {{ entry.key }} %}
+  </div>
+</div>

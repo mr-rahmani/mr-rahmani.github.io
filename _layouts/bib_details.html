@@ -1,12 +1,29 @@
 ---
 layout: default
 ---
-<article class="wrap">
+<article class="wrap pub-details">
   <h1>{{ page.entry.title }}</h1>
   <p><strong>Authors:</strong> {{ page.entry.author }}</p>
-  {% if page.entry.venue %}<p><strong>Venue:</strong> {{ page.entry.venue }}</p>{% endif %}
-  <p><strong>Year:</strong> {{ page.entry.year }}</p>
-  <p>{{ reference }}</p>
-  {% if links.pdf %}<p><a href="{{ links.pdf }}">PDF</a></p>{% endif %}
-  {% if page.entry.url %}<p><a href="{{ page.entry.url }}">Link</a></p>{% endif %}
+  {% if page.entry.journal %}<p><strong>Journal:</strong> {{ page.entry.journal }}</p>{% endif %}
+  {% if page.entry.booktitle %}<p><strong>Proceedings:</strong> {{ page.entry.booktitle }}</p>{% endif %}
+  {% if page.entry.year %}<p><strong>Year:</strong> {{ page.entry.year }}</p>{% endif %}
+
+  <p class="mt-2">{{ reference }}</p>
+
+  <div class="pub-links mt-1">
+    {% if page.entry.doi %}
+      <a class="btn btn-ghost" href="https://doi.org/{{ page.entry.doi }}" target="_blank" rel="noopener">DOI</a>
+    {% endif %}
+    {% if page.entry.eprint and page.entry.archivePrefix == "arXiv" %}
+      <a class="btn btn-ghost" href="https://arxiv.org/abs/{{ page.entry.eprint }}" target="_blank" rel="noopener">arXiv</a>
+    {% endif %}
+    {% if links.pdf %}
+      <a class="btn btn-solid" href="{{ links.pdf }}" target="_blank" rel="noopener">PDF</a>
+    {% endif %}
+  </div>
+
+  <details class="mt-2">
+    <summary>BibTeX</summary>
+    <pre>{{ page.entry.bibtex }}</pre>
+  </details>
 </article>
