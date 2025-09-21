@@ -2,22 +2,20 @@
 ---
 <div class="pub-item">
   <div class="pub-citation">
-    {{ reference }}  <!-- فرمت‌دهی کامل طبق style: ieee -->
+    {{ reference }}  <!-- exactly one citation line -->
   </div>
-
   <div class="pub-links">
     {% if entry.doi %}
       <a class="btn btn-ghost" href="https://doi.org/{{ entry.doi }}" target="_blank" rel="noopener">DOI</a>
     {% endif %}
-
     {% if entry.eprint and entry.archivePrefix == "arXiv" %}
       <a class="btn btn-ghost" href="https://arxiv.org/abs/{{ entry.eprint }}" target="_blank" rel="noopener">arXiv</a>
     {% endif %}
-
     {% if links.pdf %}
       <a class="btn btn-solid" href="{{ links.pdf }}" target="_blank" rel="noopener">PDF</a>
     {% endif %}
-
-    {% cite_details {{ entry.key }} %}
+    {% if site.scholar.details_layout %}
+      <a class="btn btn-ghost" href="{{ details_path }}">Details</a>
+    {% endif %}
   </div>
 </div>
